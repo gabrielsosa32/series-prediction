@@ -1,34 +1,41 @@
-Proyecto: Clasificador de Noticias Fake vs Real usando LSTM y Word Embeddings
+Proyecto: Predicción de Series Temporales con LSTM
 Descripción
-Este proyecto implementa un modelo de deep learning para clasificar noticias en Fake o Real. Se utiliza un modelo LSTM entrenado con embeddings preentrenados (Google News Word2Vec) para capturar el contexto y las relaciones semánticas del texto.
+Este proyecto muestra un ejemplo básico de predicción de series temporales utilizando una red neuronal LSTM (Long Short-Term Memory).
+Se genera una serie artificial (senoidal con ruido), se prepara para el modelo LSTM, se entrena y se visualizan las predicciones.
 
 Contenido
-clasificador_texto.ipynb: Notebook con todo el análisis, preprocesamiento, construcción y entrenamiento del modelo.
+serie_temporal_lstm.ipynb: Notebook con el código completo para generar datos, entrenar el modelo LSTM y visualizar resultados.
 
-modelo_entrenado.h5: Archivo del modelo entrenado guardado.
+Cómo usar
+Clonar el repositorio.
 
-requirements.txt: Lista de librerías necesarias para ejecutar el proyecto.
-
-Uso
-Clonar este repositorio
-
-Crear un entorno virtual (recomendado) e instalar las dependencias:
+Crear un entorno virtual e instalar las dependencias necesarias con:
 
 nginx
 Copiar
 Editar
 pip install -r requirements.txt
-Ejecutar el notebook para entrenar el modelo o cargar el modelo preentrenado para hacer predicciones.
+Ejecutar el notebook serie_temporal_lstm.ipynb en Jupyter o VS Code para ver el ejemplo.
 
-Librerías principales
-TensorFlow / Keras
+Librerías principales usadas
+numpy
 
-Gensim (para cargar Word2Vec)
+pandas
 
-Pandas y NumPy
+matplotlib
 
-Matplotlib (para visualizaciones)
+tensorflow (keras)
 
-Resultados
-El modelo alcanza una precisión de aproximadamente 92% en el conjunto de validación, demostrando buena capacidad para distinguir noticias falsas de reales.
+scikit-learn
+
+Detalles técnicos
+Se genera una serie temporal sintética (seno con ruido).
+
+Se normalizan los datos con MinMaxScaler.
+
+Se crean secuencias con ventana deslizante para alimentar el LSTM.
+
+Se entrena un modelo LSTM simple con 50 neuronas y función de activación ReLU.
+
+Se evalúa el modelo y se visualizan predicciones vs valores reales.
 
